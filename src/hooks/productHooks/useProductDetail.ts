@@ -1,3 +1,4 @@
+import { IProduct } from "@/interfaces";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -10,5 +11,5 @@ const fetchProductById = async (productId: string | string[] | undefined) => {
 
 // fetch product detail by id 
 export const useProductDetail = (productId : string | string[] | undefined) => {
-  return useQuery(["products", productId], () => fetchProductById(productId));
+  return useQuery<IProduct>(["products", productId], () => fetchProductById(productId));
 };

@@ -88,14 +88,14 @@ describe("ProductDetail", () => {
     });
   });
 
-  it("axios api calls 1 time", async () => {
+  it("axios api calls 3 times", async () => {
     const queryClient = new QueryClient();
     const { getByTestId } = render(
       <QueryClientProvider client={queryClient}>
         <ProductDetail />
       </QueryClientProvider>
     );
-    await waitFor(() => expect(axios.get).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(axios.get).toHaveBeenCalledTimes(3));
   });
 
   it("description displays correct label", async () => {

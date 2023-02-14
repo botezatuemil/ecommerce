@@ -45,7 +45,7 @@ const Filter = () => {
         {
           // map category filters from global store to show it's checked status even when the sidebar is closed
           filterCategory.map((filter) => (
-            <div className="flex flex-row space-x-2">
+            <div key={Math.random()} className="flex flex-row space-x-2">
               <input checked={filter.checked} type="checkbox" onChange={(e) => onCheckCategory(e, filter.category)} />
               <label className="font-jost">{filter.category}</label>
             </div>
@@ -57,7 +57,7 @@ const Filter = () => {
         {
           // map price filters from global store to show it's checked status even when the sidebar is closed
           filterPrice.map((price) => (
-          <div className="flex flex-row space-x-2">
+          <div key={Math.random()} className="flex flex-row space-x-2">
             <input type="checkbox" checked={price.checked} onChange={(e) => onCheckPrices(price)} />
             {price.upperBound !== Infinity ? (
               <label className="font-jost">

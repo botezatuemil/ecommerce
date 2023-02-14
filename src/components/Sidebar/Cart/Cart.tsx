@@ -31,7 +31,7 @@ const Cart = () => {
         <div className="flex w-full border-[1px] mt-6 " />
         <div className="w-full space-y-2 h-[70vh] overflow-y-auto">
           {isCartArray(cartItems) &&
-            cartItems.map((cart) => <CartItem cart={cart} />)}
+            cartItems.map((cart) => <CartItem key={cart.product.id} cart={cart} />)}
         </div>
       </div>
       <div className="flex h-full items-center justify-between ">

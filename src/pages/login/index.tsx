@@ -6,6 +6,7 @@ import React from "react";
 import jwt_decode from "jwt-decode";
 import {useUser} from "../../store/UserStore"
 import { useForm } from "@/hooks/userHooks/useForm";
+import Link from "next/link";
 
 const Login = () => {
  
@@ -90,9 +91,9 @@ const Login = () => {
             value={password}
             onChange={onChangePassword}
           />
-          <a href="/login" className="text-xs underline text-white md:text-black">
+          <Link href="/login" className="text-xs underline text-white md:text-black">
             Forgot password?
-          </a>
+          </Link>
           <button  className="items-center flex justify-center bg-black w-full h-[40px] pl-2 rounded text-white hover:bg-white hover:border-2 hover:border-black hover:text-black transition-all delay-200 ease-in-out">
             Sign In
           </button>

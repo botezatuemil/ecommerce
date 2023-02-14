@@ -4,10 +4,10 @@ import React from "react";
 import { UseQueryResult } from "react-query";
 import Product from "../Product/Product";
 
-const Carousel : React.FC<{page: string, title: string, items: () => UseQueryResult<any, unknown> }> = (props) => {
+const Carousel : React.FC<{page: string, title: string, items: any }> = (props) => {
 
   // calls the hook from props to display it's data
-  const { isLoading, data, isError, isFetching, refetch } = props.items();
+  // const { isLoading, data, isError, isFetching, refetch } = props.items();
 
   return (
     <div className="flex flex-col w-full p-10 space-y-6">
@@ -16,8 +16,8 @@ const Carousel : React.FC<{page: string, title: string, items: () => UseQueryRes
       <Link href={props.page} className="font-jost cursor-pointer">See all</Link>
       </div>
       <div className="flex flex-row overflow-x-scroll py-2  space-x-10 w-full">
-        {isProductArray(data) &&
-          data.map((product) => (
+        {isProductArray(props.items) &&
+          props.items.map((product) => (
             <Product
               id={product.id}
               title={product.title}

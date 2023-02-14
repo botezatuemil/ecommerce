@@ -10,6 +10,7 @@ export default function Home() {
 
   // calls custom hook that checks if the user is still authenticated 
   useFetchLogin();
+  const {data} = useProduct();
   
   return (
     <div className="flex flex-col w-full min-h-[100vh]  ">
@@ -42,7 +43,7 @@ export default function Home() {
         {/* component that shows a list of services provided by the store */}
         <ServicesList />
         {/* component to show more items as a horizontal list by passing any data that we want to be displayed*/}
-        <Carousel page="products" title="Featured Collection" items={useProduct} />
+        <Carousel page="products" title="Featured Collection" items={data} />
        
       </div>
     </div>

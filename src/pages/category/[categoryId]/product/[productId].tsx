@@ -9,7 +9,7 @@ import { IoMdRemove } from "react-icons/io";
 import Carousel from "@/components/Carousel/Carousel";
 import { useProductsCategoryFilter } from "@/hooks/categoryHooks/useProductCategoryFilter";
 import { useCartStore } from "@/store/CartState";
-import { ICart } from "@/interfaces";
+import { ICart, IProduct } from "@/interfaces";
 import { useFetchLogin } from "@/hooks/userHooks/useFetchLogin";
 
 const ProductDetail = () => {
@@ -18,9 +18,12 @@ const ProductDetail = () => {
   const [count, setCount] = useState<number>(1);
 
   // fetch product detail by id that was passed from router
-  const { isLoading, data, isError, isFetching, refetch } =
+  const { isLoading, data , isError, isFetching, refetch } =
     useProductDetail(productId);
     useFetchLogin();
+
+  
+  const {data: productsCategoryFilter} = useProductsCategoryFilter(data?.category, data?.id);
 
   // cart global store to handle adding or removing items from cart
   const { addToCart } = useCartStore();
@@ -108,7 +111,7 @@ const ProductDetail = () => {
           <Carousel
             page={`/category/${data.category}`}
             title="Items You Might Like"
-            items={() => useProductsCategoryFilter(data.category, data.id)}
+            items={productsCategoryFilter}
           />
         </div>
       }

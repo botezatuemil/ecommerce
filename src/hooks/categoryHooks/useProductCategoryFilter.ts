@@ -6,7 +6,7 @@ import { fetchProductsCategory } from "./useProductInCategory";
 // it does not make another api call because productsCategory key is the same as useProductInCategory
 // if the data is still in cache
 
-export const useProductsCategoryFilter = (categoryName: string | string[] | undefined, idProduct: number) => {
+export const useProductsCategoryFilter = (categoryName: string | string[] | undefined, idProduct: number | undefined) => {
   return useQuery(["productsCategory", categoryName], () => fetchProductsCategory(categoryName), {
     onSuccess: () => console.log(`Successfully fetched products for ${categoryName}`),
     onError: () => console.log("Error"),
