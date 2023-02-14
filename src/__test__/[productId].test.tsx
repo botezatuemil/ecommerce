@@ -9,7 +9,8 @@ import {
 import axios from "axios";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ProductDetail from "./[productId]";
+import ProductDetail from "../pages/category/[categoryId]/product/[productId]";
+//import {jest} from '@jest/globals';
 
 // creates a mock router for NextJS
 jest.mock("next/router", () => {
