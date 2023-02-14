@@ -2,6 +2,8 @@
 
 An ecommerce app made in Next.js that has functionalities for user login, displaying products, filters, account data and cart.
 
+https://ecommerce-git-main-emlibotezatu.vercel.app/
+
 
 ## Tech Stack
 
@@ -424,4 +426,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+
+
+## Deployment
+
+https://ecommerce-git-main-emlibotezatu.vercel.app/
 
